@@ -1,16 +1,16 @@
 # NetPro MLM Software — Client Demo
 
-A browser-only interface prototype for exploring a binary-plan network marketing dashboard. It uses plain HTML, CSS, and JavaScript; there is no package installation or build step.
+A browser-only prototype for exploring member dashboards, binary placement, sample wallet activity, and simulated plan tracking. It uses plain HTML, CSS, and JavaScript with no build step or package installation.
 
-> **Demo only:** Accounts, commissions, wallet balances, withdrawals, and investment plans are simulated in this browser. No real money is accepted, sent, invested, or paid out. The displayed rates are illustrative and are not guarantees, financial advice, or an offer. This project is not suitable for production use.
+> **Demo only:** This project does not accept or transfer real money, process bank payouts, or make investments. Commissions, balances, plan rates, and maturity credits are illustrative simulations, not guarantees, financial advice, or an offer. Do not enter real personal, banking, or password information. This front-end prototype is not suitable for production.
 
 ## Run locally
 
 1. Open this folder in VS Code.
-2. Start a local static web server (for example, with the Live Server extension), then open `index.html`.
-3. Use one of the demo accounts below. The six-digit sign-in code is shown on screen.
+2. Start a local static web server (such as the Live Server extension) and open `index.html`.
+3. Use a demo account below. The one-time sign-in code is displayed on screen.
 
-Opening through a local web server is required for browser SHA-256 support.
+The app uses the Web Crypto API, so open it through a local server rather than directly as a `file:` URL.
 
 ## Demo accounts
 
@@ -20,23 +20,22 @@ Opening through a local web server is required for browser SHA-256 support.
 | Member | `NP1002` | `1234` |
 | Seeded members | `NP1003`, `NP1005` | `1234` |
 
-## Included demo features
+## Features
 
-- Binary placement tree, member registration, packages, and seeded team accounts
-- Simulated 10% direct, binary matching, and level 2 / level 3 commissions (2% / 1%)
-- Member ranks, local wallet ledger, transfers, and admin-reviewed withdrawal requests
-- 30 / 60 / 90-day simulated plans, demo add-funds action, and a `+10 demo days` control
-- Notice board, profile editing, account blocking, password change, and audit history
-- SHA-256 password hashes, one-time demo code, three-attempt 30-second lockout, and 15-minute idle sign-out
+- Binary tree placement, six sample packages, member registration, and simulated direct / binary / level commissions
+- Member ranks, local wallet ledger, demo transfers, and admin-reviewed sample withdrawal requests
+- 30 / 60 / 90-day simulated plans, demo wallet top-ups, and a `+10 days` control
+- Notice board, profile editing, account blocking, audit history, password hashing demo, OTP demo, and idle sign-out
 
 ## Data and limitations
 
-Data is stored in this browser's `localStorage` under `npmlm2`. Use **Reset demo data** on the sign-in screen to restore the seed accounts. A new browser or cleared site data starts with fresh demo data.
+Data is stored in this browser's `localStorage` under `npmlm2`. Use **Reset** on the sign-in screen to restore the seed accounts. The bundled bank values are synthetic placeholders; no payout is sent.
 
-This front-end prototype has no server, authoritative authentication, real OTP delivery, payment gateway, or bank integration. Client-side controls can be altered and are not a security boundary. Do not enter real personal, financial, or password information. Before any real-world use, obtain qualified legal and security review and build appropriate server-side systems.
+Client-side storage, hashing, OTP display, and access controls are demonstrations only and are not security boundaries. There is no backend, real OTP delivery, payment integration, or bank connection. A production system would require properly secured server-side authentication and validation, real service integrations, and qualified legal and security review. Investment products and referral compensation may be subject to local laws.
 
 ## Files
 
 - `index.html` — app shell
-- `css/style.css` — layout and styling
-- `js/app.js` — demo data, login flow, and interface logic
+- `css/style.css` — styling and responsive layout
+- `js/app.js` — demo data, commission simulation, and interface logic
+- `standalone.html` — single-file version of the demo
